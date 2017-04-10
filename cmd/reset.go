@@ -9,10 +9,10 @@ package cmd
 
 import (
   "bufio"
-	"fmt"
+  "fmt"
   "os"
 
-	"github.com/spf13/cobra"
+  "github.com/spf13/cobra"
 )
 
 
@@ -64,16 +64,16 @@ var resetPassword = func(cmd *cobra.Command, args []string) {
 
 
 var resetCmd = &cobra.Command{
-	Use:     "reset",
-	Short:   "Resets a user's password",
-	Long:    ``,
+  Use:     "reset",
+  Short:   "Resets a user's password",
+  Long:    ``,
 	
   Run: resetPassword,
 }
 
 
 func init() {
-	RootCmd.AddCommand(resetCmd)
+  RootCmd.AddCommand(resetCmd)
 
   resetCmd.Flags().StringVarP(&uID,    "userid", "u", "", "The user's id")
   resetCmd.Flags().StringVarP(&databaseURL, "database", "d", "couchbase://localhost/default", "URL for CouchBase database")

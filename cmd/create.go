@@ -10,11 +10,11 @@ package cmd
 
 import (
   "bufio"
-	"fmt"
+  "fmt"
   "os"
   "strings"
 
-	"github.com/spf13/cobra"
+  "github.com/spf13/cobra"
 )
 
 
@@ -55,7 +55,6 @@ var createUser = func(cmd *cobra.Command, args []string) {
   permissions, _ := reader.ReadString('\n')
   
   
-  
   id          = strings.TrimSpace(id)
   email       = strings.TrimSpace(email)
   firstname   = strings.TrimSpace(firstname)
@@ -88,15 +87,15 @@ var createUser = func(cmd *cobra.Command, args []string) {
 }
 
 var createCmd = &cobra.Command{
-	Use:     "create",
-	Short:   "Creates a new user in the database",
-	Long:    ``,
+  Use:     "create",
+  Short:   "Creates a new user in the database",
+  Long:    ``,
   
   Run: createUser,
 }
 
 func init() {
-	RootCmd.AddCommand(createCmd)
+  RootCmd.AddCommand(createCmd)
 
   createCmd.Flags().StringVarP(&databaseURL, "database", "d", "couchbase://localhost/default", "URL for the CouchBase database")
 }
